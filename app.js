@@ -6,19 +6,19 @@ let msg=document.querySelector("#msg");
 let turno=true;//player x, player o
 let count=0;
 let mode="";
-let modebtn=document.querySelector("#modee");
-let currmode="light";
 
-modebtn.addEventListener("click",()=>{
-    if(currmode==="light"){
-        currmode="dark";
+const themeToggle = document.getElementById("themeBtn");
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    if (document.body.classList.contains("dark")) {
+        themeToggle.textContent = "☀️";
         document.querySelector("body").style.backgroundColor="black";
-    }
-    else{
-        currmode="light";
+        document.querySelector("body").style.color="white";
+    } else {
+        themeToggle.textContent = "🌙";
         document.querySelector("body").style.backgroundColor="white";
+        document.querySelector("body").style.color="black";
     }
-    console.log(currmode);
 });
 
 const frndBtn=document.querySelector("#friendBtn");
